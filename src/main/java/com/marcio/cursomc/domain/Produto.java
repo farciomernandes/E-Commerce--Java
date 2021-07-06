@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity
 public class Produto implements Serializable {
@@ -26,9 +28,13 @@ public class Produto implements Serializable {
 	private Double price;
 	
 	
+
+	//@JsonBackReference: decorator serve para avisar que o outro lado do relacionamento ja fez a busca dos objetos
+	//@JsonBackReference: entao essa entidade nao precisar buscar os objetos, omite a categoria de cada produto
+	
 	//Criar relacionamento muitos pra muitos e tabela PRODUTO_CATEGORIA 
 	//que tem "produto_id" e "categoria_id"
-	
+	@JsonBackReference()
 	@ManyToMany
 	@JoinTable(name="PRODUTO_CATEGORIA",
 		joinColumns = @JoinColumn(name = "produto_id"),

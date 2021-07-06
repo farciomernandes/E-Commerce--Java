@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Categoria implements Serializable {
 private static final long serialVersionUID = 1L;
@@ -21,6 +23,8 @@ private static final long serialVersionUID = 1L;
 	private String name;
 	
 	
+	//@JsonManagedReference: avisa que essa ponta do relacionamento que vai fazer a busca da outra ponta
+	@JsonManagedReference()
 	//Avisa que esse relacionamento ja esta descrito na outra ponta do relacionamento
 	@ManyToMany(mappedBy="categories")
 	private List<Produto> products = new ArrayList<>();
