@@ -23,7 +23,8 @@ private static final long serialVersionUID = 1L;
 	private String name;
 	
 	
-	//@JsonManagedReference: avisa que essa ponta do relacionamento que vai fazer a busca da outra ponta
+	//@JsonManagedReference: avisa que essa ponta do relacionamento que vai fazer a 
+	//busca da outra ponta
 	@JsonManagedReference()
 	//Avisa que esse relacionamento ja esta descrito na outra ponta do relacionamento
 	@ManyToMany(mappedBy="categories")

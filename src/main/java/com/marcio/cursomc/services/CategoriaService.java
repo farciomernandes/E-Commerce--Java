@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marcio.cursomc.domain.Categoria;
-import com.marcio.cursomc.reposiories.CategoriaRepository;
+import com.marcio.cursomc.repositories.CategoriaRepository;
 import com.marcio.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
