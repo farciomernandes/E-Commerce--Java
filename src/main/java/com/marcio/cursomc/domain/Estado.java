@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Estado  implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -20,8 +22,9 @@ public class Estado  implements Serializable {
 	private Integer id;
 	private String name;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="estado")
-	private List<Cidade> cidades = new ArrayList();
+	private List<Cidade> cidades = new ArrayList<>();
 	//possui relacionamento UM para MUITOS com Cidade
 	//quem mapeou foi a coluna ESTADO
 	
